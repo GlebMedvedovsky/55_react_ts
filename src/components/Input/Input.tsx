@@ -1,12 +1,12 @@
-import React from "react";
+// import React from "react"; // пока не нужен, раскомментирую, если добавлю хуки
 
 interface InputProps {
   placeholder: string;
   name: string;
 }
 
-const Input: React.FC<InputProps> = ({ placeholder, name }) => {
-  return <input type="text" placeholder={placeholder} name={name} />;
-};
+function Input({ placeholder, name }: InputProps) {
+  return <input placeholder={placeholder} name={name} />;
+}
 
 export default Input;

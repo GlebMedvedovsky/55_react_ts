@@ -5,14 +5,11 @@
 import Homework06 from "./homeworks/homework06/Homework06.tsx";
 
 function App() {
-
   return (
     <>
-      {/* <Task6 /> */}
       <Homework06 />
-      {/* <Homework06/> */}
     </>
-  )
+  );
 }
 
-export default App
+export default App;

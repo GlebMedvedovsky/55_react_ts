@@ -1,15 +1,15 @@
 /* eslint-disable prefer-const */
 /* eslint-disable @typescript-eslint/no-unused-vars */
 
-let age: number= 25;  
+let age: number = 25;
 
 let name: string = "Alice";
 
-let isActive: boolean = true; 
+let isActive: boolean = true;
 
 let nullableValue: string | null = null; // Строка или null
 
-let numbers. number = [1, 2, 3, 4]; 
+let numbers: number[] = [1, 2, 3, 4];
 
 let names: string[] = ["Alice", "Bob", "Charlie"];
 
@@ -18,78 +18,104 @@ let mixed: (string | number)[] = [1, "Alice", 2, "Bob"];
 let colors: (string | number | boolean)[] = [123, "red", true, "blue"];
 
 const add = (a: number, b: number): number => {
-    return a - b;
-  };
+  return a - b;
+};
 
- // type Role = 'admin'| 'user'| 'guest';
- enum ROLE {
-    ADMIN = 'admin',
-    USER = 'user',
-    GUEST = 'guest'}
+// type Role = "admin" | "user" | "guest";
 
-  interface User {
-    id: string | number;
-    name: string;
-    email: string;
-    isActive: boolean;
-    role: ROLE;
-  }
+enum ROLE {
+    ADMIN='admin',
+    USER= 'user',
+    GUEST= 'guest'
+};
 
-  const objectuser: User = {
-    id: 1,
-    name: "John",
-    email: "j0Y4W@example.com",
-    isActive: true,
-    role: "admin",
-  };
+interface User {
+  id: string | number;
+  name: string;
+  email: string;
+  isActive: boolean;
+  role: ROLE 
+};
 
-  interface Products {
-    id: number;
-    name: string;
-    price: number;
+const objectUser: User = {
+  id: 1234,
+  name: "Bob",
+  email: "wer@mail.de",
+  isActive: true,
+  role: ROLE.ADMIN,
+};
+
+// Задача 3
+interface Products {
+    id: number,
+    name: string,
+    price: number,
     inStock: boolean;
-  }
+};
 
-  const products: Products[] = [
+
+const products: Products[] = [
     { id: 1, name: "Laptop", price: 1200, inStock: true },
     { id: 2, name: "Mouse", price: 25, inStock: false },
     { id: 3, name: "Keyboard", price: 80, inStock: true },
   ];
 
-  interface Book {
+interface Book {
     id: string,
     title: string,
     price: number,
-    rating: 4.8,
-    inStock: true,
-  }
-interface Bookstore {
-    name: string;
-    location: string;
-    books: Book[];
-    customers: Customer[];
-    settings: Settings;
-  }
+    inStock: boolean,
+};
 
-  const bookstore = {
+interface Customer {
+    id: number,
+    name: string,
+    email: string,
+};
+interface Order {
+    orderId: string,
+    customerId: number,
+    books:  string[],
+    totalAmount: number,
+    status: ORDER_STATUS,
+}
+
+enum ORDER_STATUS {
+    PROC='processing',
+    SHIP= 'shipped',
+    DEL= 'delivered'
+}
+
+interface Setting {
+    currency: string,
+    isOpen: boolean,
+    discountRate: number, 
+}
+
+  interface Bookstore {
+    name: string,
+    location: string,
+    books: Book[],
+    customers: Customer[] ,
+    orders: Order[],
+    settings: Setting
+  }
+    
+
+  const bookstore: Bookstore = {
     name: "The Grand Bookstore",
     location: "New York, USA",
     books: [
       {
         id: "B001",
         title: "The Hobbit",
-        genre: Genre.Fantasy,
         price: 15.99,
-        rating: 4.8,
         inStock: true,
       },
       {
         id: "B002",
         title: "1984",
-        author: { id: 2, name: "George Orwell", birthYear: 1903, country: "UK" },
-        genre: Genre.Fiction,
         price: 12.5,
-        rating: 4.7,
         inStock: false,
       },
     ],
@@ -100,9 +126,18 @@ interface Bookstore {
         email: "alice@example.com",
       },
     ],
-      settings: {
+    orders: [
+      {
+        orderId: "O1001",
+        customerId: 101,
+        books:  [ "B001", "B001" ],
+        totalAmount: 15.99,
+        status: ORDER_STATUS.SHIP,
+      },
+    ],
+    settings: {
       currency: "USD",
       isOpen: true,
-      discountRate: 10, // 10% скидка
-    },
-  };
+      discountRate: 10, 
+    }
+  }

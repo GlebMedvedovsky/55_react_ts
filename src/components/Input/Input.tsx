@@ -1,32 +1,29 @@
-// import React from "react"; // пока не нужен, раскомментирую, если добавлю хуки
+import './styles.css';
+import { InputProps } from './types';
 
-import ".styles.css";
-
-function Input({placeholder, 
-  name, 
-  value, 
-  type = "text", 
-  onChange, 
-  label, 
-  id)} {
+function Input({
+  placeholder,
+  name,
+  value,
+  type = 'text',
+  onChange,
+  label,
+  id
+}: InputProps) {
   return (
-    <div className="input-container">
+    <div className='input-container'>
       <label htmlFor={id}>{label}</label>
       <input
-        className="input-component"
-        type={type}
+        className='input-component'
+        name={name}
+        placeholder={placeholder}
         value={value}
         onChange={onChange}
-        placeholder={placeholder}
-        name={name}
+        type={type}
         id={id}
       />
     </div>
-  );
-
-  // Раньше использовался JSX, но для компонентов React лучше использовать TSX
-
-  // <input className='input-component' name='test' placeholder="Enter text"/>
+  )
 }
 
 export default Input;

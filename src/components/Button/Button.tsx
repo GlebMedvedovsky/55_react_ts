@@ -1,23 +1,25 @@
-import "./styles.css";
+import './styles.css';
+import { ButtonProps } from './types';
 
-interface ButtonProps {
-  name: string, 
-  onClick?: () => void, 
-  disebled?: boolean, 
-  type?: 'submit' | 'reset' | 'button'
-}
+// interface ButtonProps {
+//   name: string,
+//   //void - если функция ничего не возвращает
+//   onClick?: () => void,
+//   disabled?: boolean,
+//   type?: 'submit' | 'button' | 'reset'
+// }
 
-function Button({ name, onClick, disebled = false, type = "submit"}:ButtonProps) {
+function Button({ name, onClick, disabled = false, type = 'submit' }: ButtonProps) {
   return (
-    <button 
-    className="main-button" 
-    onClick={onClick} 
-    disabled={disebled}
-    type={type}
+    <button
+      className="main-button"
+      onClick={onClick}
+      disabled={disabled}
+      type={type}
     >
       {name}
     </button>
-  );
+  )
 }
 
-
+export default Button

@@ -1,25 +1,26 @@
-import {v4} from "uuid";
+import { v4 } from "uuid";
 
 import AnimalCard from "../../components/AnimalCard/AnimalCard";
-import { animalData } from "./date";
-import "styles.css";
+import { animalData } from "./data";
+import './styles.css';
 
 function Lesson07() {
-    const animalCards = animalDate.map((animal) => {
-        return <AnimalCard 
-        key={v4()} 
-        name={animal.name} 
-        species={animal.species} 
-        img={animal.image} />;
-    })
+  const animalCards = animalData.map((animal) => {
+    return <AnimalCard
+      key={v4()}
+      name={animal.name}
+      species={animal.species}
+      img={animal.image} />
+  })
 
-    console.log(animalCards);
+  console.log(animalCards);
 
-    return (
-        <div className="cards-wrapper">
-            {animalCards}
-        </div>
-    )
-    // <AnimalCard name={animalData[0].name} species="Lion" img='' />
+
+  return (
+    <div className='cards-wrapper'>
+      {animalCards}
+    </div>
+  )
+  // <AnimalCard name={animalData[0].name} species="Lion" img='' />
 }
 export default Lesson07

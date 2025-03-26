@@ -7,7 +7,7 @@ function Lesson06() {
   console.log(getAction(TRAFFIC_LIGHT.GREEN));
   
 
-  return <Button />
+  return <Button name "send" />
 }
 
 //Экспорт по умолчанию для компонента Lesson06

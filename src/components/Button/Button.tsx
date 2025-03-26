@@ -1,7 +1,23 @@
-import './styles.css';
+import "./styles.css";
 
-function Button() {
-  return <button className="main-button">Send</button>
+interface ButtonProps {
+  name: string, 
+  onClick?: () => void, 
+  disebled?: boolean, 
+  type?: 'submit' | 'reset' | 'button'
 }
 
-export default Button
+function Button({ name, onClick, disebled = false, type = "submit"}:ButtonProps) {
+  return (
+    <button 
+    className="main-button" 
+    onClick={onClick} 
+    disabled={disebled}
+    type={type}
+    >
+      {name}
+    </button>
+  );
+}
+
+

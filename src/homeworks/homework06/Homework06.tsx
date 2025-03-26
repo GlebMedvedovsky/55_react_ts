@@ -1,5 +1,6 @@
 import React from "react";
-import Input from "../components/Input/Input.tsx";
+import Input from "../components/Input/Input";
+
 const Homework06: React.FC = () => {
   return (
     <div>
@@ -8,5 +9,4 @@ const Homework06: React.FC = () => {
     </div>
   );
 };
-
 export default Homework06;

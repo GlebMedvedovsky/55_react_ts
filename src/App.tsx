@@ -7,12 +7,14 @@
 
 //Homeworks imports
 // import Homework06 from "./homeworks/Homework06/Homework06"
-import Homework07 from "./homeworks/homework07/Homework07"
+// import Homework07 from "./homeworks/homework07/Homework07"
+// import Lesson08 from "./lessons/Lesson08/Lesson08"
+import Consultation04 from "./consultations/Consultation04/Consultation04"
 function App() {
 
   return (
     <>
-      <Homework07 />
+      <Consultation04 />
     </>
   )
 }

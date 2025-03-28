@@ -1,25 +1,13 @@
-import './styles.css';
-import { ButtonProps } from './types';
+import React from "react";
+import "./styles.css";
 
-// interface ButtonProps {
-//   name: string,
-//   //void - если функция ничего не возвращает
-//   onClick?: () => void,
-//   disabled?: boolean,
-//   type?: 'submit' | 'button' | 'reset'
-// }
+type ButtonProps = {
+  onClick: () => void;
+  children: React.ReactNode;
+};
 
-function Button({ name, onClick, disabled = false, type = 'submit' }: ButtonProps) {
-  return (
-    <button
-      className="main-button"
-      onClick={onClick}
-      disabled={disabled}
-      type={type}
-    >
-      {name}
-    </button>
-  )
+function Button({ onClick, children }: ButtonProps) {
+  return <button onClick={onClick}>{children}</button>;
 }
 
-export default Button
+export default Button;

@@ -1,26 +1,37 @@
 import styled from "@emotion/styled";
 
-// Контейнер для карточек
+// Интерфейс для карточек
+interface CardProps {
+  vip?: boolean;
+}
+
+// Контейнер для всех карточек
 export const Container = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+`;
+
+// Контейнер для карточек (заменяем обычный <div>)
+export const CardsWrapper = styled.div`
   display: flex;
   gap: 20px;
   justify-content: center;
-  align-items: center;
-  flex-direction: column; /* Чтобы заголовок был сверху */
 `;
 
 // Заголовок "User Types"
 export const Title = styled.h1`
   font-size: 32px;
   font-weight: bold;
-  color: #a52222;
+  color: #4a4a4a;
   margin-bottom: 20px;
   text-transform: uppercase;
   text-align: center;
 `;
 
 // Карточка пользователя
-export const Card = styled.div<{ vip?: boolean }>`
+export const Card = styled.div<CardProps>`
   display: flex;
   flex-direction: column;
   align-items: center;

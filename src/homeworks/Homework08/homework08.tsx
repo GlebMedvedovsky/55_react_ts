@@ -1,41 +1,42 @@
-import { useState } from "react";
+import { ChangeEvent, useState } from "react";
+import Button from "../../components/Button/Button";
 import Input from "../../components/Input/Input";
-
-interface ButtonProps {
-  onClick: () => void;
-  disabled?: boolean;
-  type?: "button" | "submit" | "reset";
-}
-
-function Button({ children, onClick, disabled = false, type = 'submit' }: ButtonProps & { children: React.ReactNode }) {
-  return (
-    <button onClick={onClick} disabled={disabled} type={type}>
-      {children}
-    </button>
-  );
-}
-
+import './styles.css'
 function Homework08() {
-  const [password, setPassword] = useState("");
-  const [isVisible, setIsVisible] = useState(false);
+  const [passwordValue, setPasswordValue] = useState<string>('');
+  const [isShowPassword, setIsShowPassword] = useState<boolean>(false);
+  const onChangePassword = (event: ChangeEvent<HTMLInputElement>) => {
+    setPasswordValue(event.target.value)
+  }
+  const showPassword = () => {
+    setIsShowPassword(true)
+  }
+  const hidePassword = () => {
+    setIsShowPassword(false)
+  }
 
   return (
-    <div>
+    <div className="homework08-container">
       <h1>Change password</h1>
       <Input
-        label="Password"
+        name='password'
+        label='Password'
+        id='password_id'
         placeholder="Enter your password"
-        name="password"
-        type="password"
-        value={password}
-        onChange={(e) => setPassword(e.target.value)}
+        type='password'
+        value={passwordValue}
+        onChange={onChangePassword}
       />
-      <Button onClick={() => setIsVisible(!isVisible)}>
-        {isVisible ? "HIDE PASSWORD" : "SHOW PASSWORD"}
-      </Button>
-      {isVisible && <p>{password}</p>}
+      <Button onClick={showPassword}>SHOW PASSWORD</Button>
+      <Button onClick={hidePassword}>HIDE PASSWORD</Button>
+      {isShowPassword && <div className="result-container">{passwordValue}</div>}
+      <Button onClick={handleSubmit}>SUBMIT PASSWORD</Button>
     </div>
-  );
+  )
+}
+function handleSubmit(): void {
+    alert("Password submitted successfully!");
 }
 
 export default Homework08;
+

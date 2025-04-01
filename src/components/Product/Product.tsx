@@ -1,20 +1,22 @@
-import "./styles.css";
+import { useEffect } from "react";
+
 import { ProductProps } from "./types";
+import './styles.css'
 
+function Product ({name, price}: ProductProps) {
+// Unmounting - выполняем действие при размонтировании компонента Product
+useEffect(() => {
+    return () => {
+        console.log('Component will unmount');
+    }
+}, []);
 
-function Product({ name, price }: ProductProps) {
-  return (
-    // <div className="product-card">
-    //   <h2>{name}</h2>
-    //   <p>Price: ${price.toFixed(2)}</p>
-    // </div>
-    // Теперь вместо формата Price: $1.50, будет отображаться просто Price: 1.50.
-
-      <div className="product-card">
-        <h2>{name}</h2>
-        <p>Price: {price.toFixed(2)}</p>
-      </div>  
-  );
+    return (
+        <div className="product-container">
+            <div>Product: {name}</div>
+            <div>Price: {price}</div>
+        </div>
+    )
 }
 
 export default Product;

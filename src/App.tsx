@@ -17,9 +17,10 @@ import GlobalStyles from "./styles/GlobalStyles"
 // import Homework07 from "./homeworks/homework07/Homework07"
 // import Homework08 from "./homeworks/Homework08/homework08"
 // import Homework09 from "./homeworks/Homework09/Homework09"; 
+import Homework11 from "./homeworks/Homework11/Homework11";
 
 // Consulation imports:
-import Consultation05 from "./consultations/Consultation05/Consultation05";
+// import Consultation05 from "./consultations/Consultation05/Consultation05";
 
 
 
@@ -28,7 +29,9 @@ function App() {
   return (
     <>
     <GlobalStyles/>
-      <Consultation05 />
+      {/* <Consultation05 /> */}
+      <Homework11 />
+
     </>
   )
 }

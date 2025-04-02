@@ -1,3 +1,4 @@
+//import Lesson11 from "./lessons/Lesson11/Lesson11"
 import GlobalStyles from "./styles/GlobalStyles"
 
 //Lessons imports
@@ -10,6 +11,8 @@ import GlobalStyles from "./styles/GlobalStyles"
 // import Lesson09 from "./lessons/Lesson09/Lesson09"
 // import Lesson10 from "./lessons/Lesson10/Lesson10"
 // import Lesson11 from "./lessons/Lesson11/Lesson11";
+// import Lesson12 from "./lessons/Lesson12/Lesson12"
+
 
 
 //Homeworks imports
@@ -17,7 +20,9 @@ import GlobalStyles from "./styles/GlobalStyles"
 // import Homework07 from "./homeworks/homework07/Homework07"
 // import Homework08 from "./homeworks/Homework08/homework08"
 // import Homework09 from "./homeworks/Homework09/Homework09"; 
-import Homework11 from "./homeworks/Homework11/Homework11";
+// import Homework11 from "./homeworks/Homework11/Homework11";
+import Homework12 from "./homeworks/Homework12/Homework12";
+
 
 // Consulation imports:
 // import Consultation05 from "./consultations/Consultation05/Consultation05";
@@ -30,7 +35,8 @@ function App() {
     <>
     <GlobalStyles/>
       {/* <Consultation05 /> */}
-      <Homework11 />
+      <Homework12 />
+      {/* <Lesson12/> */}
 
     </>
   )

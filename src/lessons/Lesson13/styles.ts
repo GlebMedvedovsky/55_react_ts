@@ -87,13 +87,24 @@ export const DeleteButton = styled(Button)`
 `;
 
 export const ImageWrapper = styled.div`
-  width: calc(50% - 10px);
+  width: calc(50% - 10px); /* Каждое изображение занимает половину ширины контейнера */
+  height: 500px; /* Фиксированная высота */
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeIn 0.5s ease forwards;
+
+  @keyframes fadeIn {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
 
   img {
     width: 100%;
-    height: auto;
+    height: 100%; /* Занимает всю высоту контейнера */
     border-radius: 10px;
-    object-fit: cover;
+    object-fit: cover; /* Обрезает изображение, если оно не подходит по размеру */
     box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
   }
 `;

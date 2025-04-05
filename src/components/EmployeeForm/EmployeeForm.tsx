@@ -1,23 +1,25 @@
-import { useFormik } from "formik";
+import { ErrorMessage, useFormik } from "formik";
 import * as Yup from "yup";
-import { EmployeeFormContainer, Title, CheckboxContainer } from "./styles"
+import { EmployeeFormContainer, Title, CheckboxContainer } from "./styles";
 import Input from "../../components/Input/Input";
 import Button from "../../components/Button/Button";
-import { EmployeeFormValues } from "./types"
+import { EmployeeFormValues } from "./types";
 
 function EmployeeForm() {
   const schema = Yup.object().shape({
     fullName: Yup.string()
       .required("Full name is required")
-      .min(5, "Minimum 5 characters")
-      .max(50, "Maximum 50 characters"),
+      .min(3, "Minimum 3 characters")
+      .max(50, "Maximum 50 characters")
+      .matches(/^[A-Za-z\s]+$/, "Only letters allowed"),
     age: Yup.number()
       .typeError("Age must be a number")
+      .integer("Age must be an integer")
       .required("Age is required")
       .min(18, "Minimum age is 18")
-      .max(80, "Maximum age is 80"),
-    termsAccepted: Yup.boolean()
-      .oneOf([true], "You must accept the terms"),
+      .max(80, "Maximum age is 80")
+      .required("Age is required"),
+    termsAccepted: Yup.boolean().oneOf([true], "You must accept the terms"),
   });
 
   const formik = useFormik<EmployeeFormValues>({

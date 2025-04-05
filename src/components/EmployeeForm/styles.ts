@@ -22,3 +22,8 @@ export const CheckboxContainer = styled.div`
   flex-direction: column;
   gap: 5px;
 `;
+export const ErrorMessage = styled.div`
+  font-size: 14px;
+  color: red;
+`;
+

@@ -1,5 +1,6 @@
-import { InputContainer, Label, InputComponent, ErrorMessege } from './styles';
+import { InputContainer, Label, InputComponent, ErrorMessage } from './styles';
 import { InputProps } from './types';
+// import { ErrorMessege } from "../../homeworks/Homework14/styles"
 
 function Input({
   placeholder,
@@ -25,7 +26,7 @@ function Input({
         id={id}
         isSearch = {search}
       />
-      <ErrorMessege>{error}</ErrorMessege>
+      <ErrorMessage>{error}</ErrorMessage>
     </InputContainer>
   )
 }

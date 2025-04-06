@@ -17,27 +17,18 @@ export const Title = styled.div`
   align-self: center;
 `;
 
-export const StyledCheckbox = styled.label`
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  font-size: 16px;
-`;
-
-export const ErrorMessege = styled.div`
-  color: red;
-  font-size: 14px;
-  margin-top: 5px;
-  height: 20px;
-`;
 export const CheckboxContainer = styled.div`
   display: flex;
   flex-direction: column;
   gap: 5px;
 `;
-export const LoginFormComponent = styled.div`
-display: flex;
-flex-direction: column;
-gap: 16px;
+export const ErrorMessage = styled.div`
+  font-size: 14px;
+  color: red;
+`;
+export const StyledCheckbox = styled.div`
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
 `;
 

@@ -4,7 +4,7 @@ import {
   EmployeeFormContainer,
   Title,
   CheckboxContainer,
-  ErrorMessege,
+  ErrorMessage,
   StyledCheckbox,
 } from "./styles";
 import Input from "../../components/Input/Input";
@@ -79,7 +79,7 @@ function EmployeeForm() {
         </StyledCheckbox>
 
         {typeof formik.errors.termsAccepted === "string" && (
-          <ErrorMessege>{formik.errors.termsAccepted}</ErrorMessege>
+          <ErrorMessage>{formik.errors.termsAccepted}</ErrorMessage>
         )}
       </CheckboxContainer>
 
@@ -89,3 +89,5 @@ function EmployeeForm() {
 }
 
 export default EmployeeForm;
+export type { EmployeeFormValues };
+export { EmployeeFormContainer, Title, CheckboxContainer, ErrorMessage };

@@ -6,7 +6,7 @@ interface MainButtonStyledProps {
 }
 
 export const MainButton = styled.button<MainButtonStyledProps>`
-  width: ${({ fullWidth }) => (fullWidth ? "300px" : "auto")}; // Гибкая ширина
+  width: 100%; // Устанавливаем ширину кнопки на 100%
   height: fit-content;
   padding: 10px 20px; // Уменьшаем padding для компактности
   background: ${({ danger }) => (danger ? "rgb(176, 44, 11)" : "rgb(17, 48, 127)")};

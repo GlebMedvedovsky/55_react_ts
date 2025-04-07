@@ -75,7 +75,7 @@ function EmployeeForm() {
             checked={formik.values.termsAccepted}
             onChange={formik.handleChange}
           />
-          I accept the terms of use
+         
         </StyledCheckbox>
 
         {typeof formik.errors.termsAccepted === "string" && (

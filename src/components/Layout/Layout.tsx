@@ -1,4 +1,4 @@
-import { NavLink } from "react-router-dom"
+import { Link, NavLink } from "react-router-dom"
 
 
 import {
@@ -21,6 +21,8 @@ function Layout({children} : LayoutProps) {
           <NavLink to="/lessons">Lessons</NavLink>
           <NavLink to="/homeworks">Homeworks</NavLink>
           <NavLink to="/consultations">Consultations</NavLink>
+          <Link to="/course">Course</Link>
+
         </Nav>
       </Header>
       <Main>{children}</Main>
